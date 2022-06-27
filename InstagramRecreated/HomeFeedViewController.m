@@ -8,6 +8,8 @@
 #import "HomeFeedViewController.h"
 
 @interface HomeFeedViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
+@property (weak, nonatomic) IBOutlet UIButton *composeButton;
 
 @end
 
@@ -16,6 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self renderComposeButton];
+}
+
+-(void)renderComposeButton {
+    UIImage *image = [[UIImage imageNamed:@"insta_camera_btn"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    [self.composeButton setImage:image forState:UIControlStateNormal];
+    
+    self.composeButton.tintColor = [UIColor linkColor];
 }
 
 /*

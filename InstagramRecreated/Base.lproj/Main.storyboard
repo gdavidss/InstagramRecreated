@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ELI-Ad-LCH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="82.366071428571431"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Feed View Controller-->
         <scene sceneID="7e9-lc-onX">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="ELI-Ad-LCH" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="ELI-Ad-LCH" customClass="HomeFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ASC-5F-1q1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,6 +123,10 @@
                             <constraint firstItem="5Se-Do-7gz" firstAttribute="trailing" secondItem="bpU-Ls-RLm" secondAttribute="trailing" constant="27" id="rfg-fb-bAF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="composeButton" destination="bpU-Ls-RLm" id="sTG-xG-Lmn"/>
+                        <outlet property="logoutButton" destination="QZc-IT-x0x" id="kjy-Ym-lze"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TA0-W6-n8Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
