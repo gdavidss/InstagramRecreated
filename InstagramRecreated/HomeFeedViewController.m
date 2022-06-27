@@ -6,6 +6,10 @@
 //
 
 #import "HomeFeedViewController.h"
+#import "LoginViewController.h"
+#import "AppDelegate.h"
+#import "SceneDelegate.h"
+@import Parse;
 
 @interface HomeFeedViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
@@ -19,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self renderComposeButton];
+    
 }
 
 -(void)renderComposeButton {
@@ -27,6 +32,20 @@
     [self.composeButton setImage:image forState:UIControlStateNormal];
     
     self.composeButton.tintColor = [UIColor linkColor];
+}
+
+- (IBAction)logout:(id)sender {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+    }];
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+   
+    SceneDelegate *mySceneDelegate = (SceneDelegate *) UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
+
+    mySceneDelegate.window.rootViewController = loginViewController;
 }
 
 /*

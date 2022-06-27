@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ELI-Ad-LCH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" title="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,12 +80,12 @@
                         <outlet property="passwordField" destination="mS7-pF-jkm" id="lyr-yx-Csz"/>
                         <outlet property="signupButton" destination="gZs-a3-VJO" id="OCU-P5-HXA"/>
                         <outlet property="usernameField" destination="Btr-C4-HUh" id="2Op-By-lQg"/>
-                        <segue destination="ELI-Ad-LCH" kind="presentation" identifier="loginSegue" id="inp-4p-Nd0"/>
+                        <segue destination="9iI-bT-Ja3" kind="presentation" identifier="loginSegue" id="inp-4p-Nd0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="82.366071428571431"/>
+            <point key="canvasLocation" x="241" y="82"/>
         </scene>
         <!--Home Feed View Controller-->
         <scene sceneID="7e9-lc-onX">
@@ -96,18 +96,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Feed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0U-Dt-cLe">
-                                <rect key="frame" x="160.5" y="54" width="93" height="21"/>
+                                <rect key="frame" x="160.5" y="98" width="93" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZc-IT-x0x">
-                                <rect key="frame" x="27" y="49" width="70" height="31"/>
+                                <rect key="frame" x="27" y="93" width="70" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="ELI-Ad-LCH" eventType="touchUpInside" id="2qN-ES-1se"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpU-Ls-RLm">
-                                <rect key="frame" x="338" y="45" width="49" height="39"/>
+                                <rect key="frame" x="338" y="89" width="49" height="39"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="insta_camera_btn" title=""/>
                             </button>
@@ -123,6 +126,7 @@
                             <constraint firstItem="5Se-Do-7gz" firstAttribute="trailing" secondItem="bpU-Ls-RLm" secondAttribute="trailing" constant="27" id="rfg-fb-bAF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="SiR-ti-awl"/>
                     <connections>
                         <outlet property="composeButton" destination="bpU-Ls-RLm" id="sTG-xG-Lmn"/>
                         <outlet property="logoutButton" destination="QZc-IT-x0x" id="kjy-Ym-lze"/>
@@ -130,7 +134,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TA0-W6-n8Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="999" y="82"/>
+            <point key="canvasLocation" x="1899" y="82"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6H3-dm-VA4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="9iI-bT-Ja3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TR2-EF-sWN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ELI-Ad-LCH" kind="relationship" relationship="rootViewController" id="Leq-Ep-3NN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yYE-Ee-rny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="82"/>
         </scene>
     </scenes>
     <resources>
