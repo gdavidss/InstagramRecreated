@@ -90,7 +90,7 @@
         <!--Home Feed View Controller-->
         <scene sceneID="7e9-lc-onX">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="ELI-Ad-LCH" customClass="HomeFeedViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeFeedViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ELI-Ad-LCH" customClass="HomeFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ASC-5F-1q1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
