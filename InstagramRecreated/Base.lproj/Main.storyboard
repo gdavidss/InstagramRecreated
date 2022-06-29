@@ -121,18 +121,18 @@
                                 <rect key="frame" x="0.0" y="136" width="414" height="760"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="268" id="Fo2-ar-e8C">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="268" id="Fo2-ar-e8C" customClass="PostCell">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="268"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fo2-ar-e8C" id="3OC-AA-biP">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="268"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BGG-6c-tCA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="221"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BGG-6c-tCA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="221.5"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNU-JX-3QQ">
-                                                    <rect key="frame" x="20" y="229" width="374" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNU-JX-3QQ">
+                                                    <rect key="frame" x="20" y="229.5" width="374" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -140,10 +140,18 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="CNU-JX-3QQ" firstAttribute="top" secondItem="BGG-6c-tCA" secondAttribute="bottom" constant="8" id="72K-KC-ji3"/>
+                                                <constraint firstAttribute="trailing" secondItem="BGG-6c-tCA" secondAttribute="trailing" id="APE-Bq-RFo"/>
+                                                <constraint firstItem="BGG-6c-tCA" firstAttribute="leading" secondItem="3OC-AA-biP" secondAttribute="leading" id="MoQ-6B-4p4"/>
+                                                <constraint firstItem="BGG-6c-tCA" firstAttribute="top" secondItem="3OC-AA-biP" secondAttribute="top" id="VwG-dT-uYa"/>
                                                 <constraint firstItem="CNU-JX-3QQ" firstAttribute="leading" secondItem="3OC-AA-biP" secondAttribute="leading" constant="20" id="ZTF-Pu-7PI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CNU-JX-3QQ" secondAttribute="bottom" constant="7" id="nhC-k6-EaG"/>
                                                 <constraint firstAttribute="trailing" secondItem="CNU-JX-3QQ" secondAttribute="trailing" constant="20" id="psD-dl-7Qa"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionPost" destination="CNU-JX-3QQ" id="BST-2H-6kT"/>
+                                            <outlet property="imagePost" destination="BGG-6c-tCA" id="oou-cM-t77"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -167,6 +175,7 @@
                     <connections>
                         <outlet property="composeButton" destination="bpU-Ls-RLm" id="sTG-xG-Lmn"/>
                         <outlet property="logoutButton" destination="QZc-IT-x0x" id="kjy-Ym-lze"/>
+                        <outlet property="tableView" destination="8hn-qv-WzS" id="LT2-5p-b3B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TA0-W6-n8Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

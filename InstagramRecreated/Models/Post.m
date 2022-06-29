@@ -18,10 +18,15 @@
 @dynamic commentCount;
 
 
++ (nonnull NSString *)parseClassName {
+    return @"Post";
+}
+
+
 + (void) postUserImage: (UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
-    //newPost.image = [self getPFFileFromImage:image];
+    newPost.image = [self getPFFileFromImage:image];
     newPost.author = [PFUser currentUser];
     newPost.caption = caption;
     newPost.likeCount = @(0);
@@ -45,11 +50,6 @@
     }
     
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
-}
-
- 
-+ (nonnull NSString *)parseClassName {
-    return @"Post";
 }
 
 @end
