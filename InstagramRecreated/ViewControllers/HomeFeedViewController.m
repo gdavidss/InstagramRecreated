@@ -29,7 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self renderComposeButton];
-    
+
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.NUM_POSTS_SHOWN = 20;
@@ -91,9 +91,10 @@
 }
 */
 
+
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
 
-    PostCell *postCell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    PostCell *postCell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"forIndexPath:indexPath];
     
     //Tweet *tweet = self.arrayOfTweets[indexPath.row];
     
@@ -101,7 +102,8 @@
     
     PFFileObject *imageData = self.posts[indexPath.row][@"image"];
     postCell.imagePost.image = [UIImage imageWithData:[imageData getData]];  //self.posts[indexPath.row][@"image"];
-
+    
+  
     /*
     PFUser *user = self.messages[indexPath.row][@"user"];
     if (user != nil) {

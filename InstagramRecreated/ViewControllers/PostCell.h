@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIImageView *imagePost;
 @property (weak, nonatomic) IBOutlet UILabel *captionPost;
+@property (strong, nonatomic) IBOutlet UILabel *usernamePost;
+@property (strong, nonatomic) IBOutlet UILabel *datePost;
+@property (strong, nonatomic) IBOutlet UILabel *likesPost;
+
 
 @property (strong, nonatomic) Post *post;
 
