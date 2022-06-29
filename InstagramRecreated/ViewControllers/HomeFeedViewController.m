@@ -16,9 +16,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (weak, nonatomic) IBOutlet UIButton *composeButton;
+
 @property (strong, nonatomic) NSArray *posts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic) int NUM_POSTS_SHOWN;
 
 @end
@@ -27,16 +28,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self renderComposeButton];
 
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
     self.NUM_POSTS_SHOWN = 20;
+    
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    [self fetchPosts];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    
+    [self.refreshControl addTarget:self action:@selector(refreshHomeFeed:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    [self refreshHomeFeed:self.refreshControl];
+}
+
+- (void) refreshHomeFeed:(UIRefreshControl *)refreshControl {
+    [refreshControl beginRefreshing];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    query.limit = self.NUM_POSTS_SHOWN;
+    [query orderByDescending:@"createdAt"];
+    [query includeKeys:@[@"author"]];
+    
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.posts = posts;
+            NSLog(@"Posts succesfully loaded: %@", self.posts);
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+    [refreshControl endRefreshing];
 }
 
 
@@ -63,25 +90,6 @@
     mySceneDelegate.window.rootViewController = loginViewController;
 }
 
--(void)fetchPosts {
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    //[query whereKey:@"likesCount" greaterThan:@100];
-    query.limit = self.NUM_POSTS_SHOWN;
-    [query orderByDescending:@"createdAt"];
-    [query includeKeys:@[@"author"]];
-    
-    // fetch data asynchronously
-    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
-        if (posts != nil) {
-            self.posts = posts;
-            NSLog(@"Posts succesfully loaded: %@", self.posts);
-            [self.tableView reloadData];
-        } else {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
-}
-
 /*
 #pragma mark - Navigation
 
@@ -94,11 +102,11 @@
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-
+    
     PostCell *postCell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"forIndexPath:indexPath];
-    
-    //Tweet *tweet = self.arrayOfTweets[indexPath.row];
-    
+    postCell.post = self.posts[indexPath.row];
+    return postCell;
+    /*
     postCell.captionPost.text = self.posts[indexPath.row][@"caption"];
     
     PFFileObject *imageData = self.posts[indexPath.row][@"image"];
@@ -107,10 +115,8 @@
     PFUser *author = self.posts[indexPath.row][@"author"];
     postCell.usernamePost.text = author.username;
     
-    
-    
     return postCell;
-
+     */
 }
 
 

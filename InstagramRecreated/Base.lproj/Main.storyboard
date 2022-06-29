@@ -215,6 +215,7 @@
                                             <outlet property="datePost" destination="Ngn-Us-Oca" id="GCt-zE-vEP"/>
                                             <outlet property="imagePost" destination="Y9H-GH-AW5" id="ZRs-u3-UKL"/>
                                             <outlet property="likesPost" destination="3LP-Sy-n0A" id="KGc-27-N1z"/>
+                                            <outlet property="profileImage" destination="QZI-w6-W8C" id="DqG-bW-XEV"/>
                                             <outlet property="usernamePost" destination="clX-K0-Oxu" id="5xe-ZI-fbD"/>
                                             <segue destination="bii-L4-xEd" kind="showDetail" id="KXV-kU-iny"/>
                                         </connections>
