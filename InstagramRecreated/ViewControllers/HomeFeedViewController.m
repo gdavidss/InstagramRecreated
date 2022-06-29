@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import "SceneDelegate.h"
 #import "PostCell.h"
+#import "DetailViewController.h"
+
 @import Parse;
 
 @interface HomeFeedViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -90,16 +92,6 @@
     mySceneDelegate.window.rootViewController = loginViewController;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
@@ -122,6 +114,14 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.posts.count;
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"detailSegue"]) {
+        DetailViewController *detailController = [segue destinationViewController];
+        detailController.post = self.posts[[self.tableView indexPathForCell:sender].row];
+    }
 }
 
 @end

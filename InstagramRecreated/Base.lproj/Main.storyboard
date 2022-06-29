@@ -114,7 +114,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="insta_camera_btn" title=""/>
                                 <connections>
-                                    <segue destination="nMg-Xd-Zea" kind="presentation" id="4hY-uK-iIo"/>
+                                    <segue destination="nMg-Xd-Zea" kind="presentation" identifier="" id="4hY-uK-iIo"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8hn-qv-WzS">
@@ -217,7 +217,7 @@
                                             <outlet property="likesPost" destination="3LP-Sy-n0A" id="KGc-27-N1z"/>
                                             <outlet property="profileImage" destination="QZI-w6-W8C" id="DqG-bW-XEV"/>
                                             <outlet property="usernamePost" destination="clX-K0-Oxu" id="5xe-ZI-fbD"/>
-                                            <segue destination="bii-L4-xEd" kind="showDetail" id="KXV-kU-iny"/>
+                                            <segue destination="bii-L4-xEd" kind="showDetail" identifier="detailSegue" id="KXV-kU-iny"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -413,6 +413,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="RvB-DH-1cG"/>
+                    <connections>
+                        <outlet property="captionPost" destination="bRj-2Q-eCB" id="LM1-A7-3Q5"/>
+                        <outlet property="datePost" destination="z2z-wL-T76" id="MoW-Kj-WYP"/>
+                        <outlet property="imagePost" destination="vwo-On-9nV" id="TFE-OB-gMU"/>
+                        <outlet property="likesPost" destination="k2j-1f-BwH" id="J9z-Yb-wsn"/>
+                        <outlet property="profileImage" destination="wLD-mL-ban" id="LbP-Cd-JB3"/>
+                        <outlet property="usernamePost" destination="LtI-f3-Twg" id="TP2-aU-8yC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSN-xP-4SK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

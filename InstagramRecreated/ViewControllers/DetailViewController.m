@@ -9,6 +9,13 @@
 
 @interface DetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *imagePost;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *captionPost;
+@property (strong, nonatomic) IBOutlet UILabel *usernamePost;
+@property (strong, nonatomic) IBOutlet UILabel *datePost;
+@property (strong, nonatomic) IBOutlet UILabel *likesPost;
+
 @end
 
 @implementation DetailViewController
@@ -16,16 +23,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
+    self.imagePost.image = [UIImage imageWithData:[_post.image getData]];
+    self.captionPost.text = _post.caption;
+    
+    self.usernamePost.text = _post.author.username;
+    
+    self.profileImage = nil; // TODO: profile pictures
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    self.likesPost.text = [NSString stringWithFormat:@"%@ likes", _post.likeCount];
+    
+    // TODO: format date post
+    self.datePost.text = [NSString stringWithFormat:@"%@", _post.createdAt];
 }
-*/
 
 @end
