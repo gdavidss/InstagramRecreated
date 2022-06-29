@@ -68,7 +68,7 @@
     //[query whereKey:@"likesCount" greaterThan:@100];
     query.limit = self.NUM_POSTS_SHOWN;
     [query orderByDescending:@"createdAt"];
-    // [query includeKeys:@[@"author"]];
+    [query includeKeys:@[@"author"]];
     
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
@@ -81,6 +81,7 @@
         }
     }];
 }
+
 /*
 #pragma mark - Navigation
 
@@ -104,17 +105,10 @@
     postCell.imagePost.image = [UIImage imageWithData:[imageData getData]];
     
     PFUser *author = self.posts[indexPath.row][@"author"];
-    // postCell.usernamePost.text = author.username;
-    /*
-    PFUser *user = self.messages[indexPath.row][@"user"];
-    if (user != nil) {
-        // User found! update username label with username
-        cell.username.text = user.username;
-    } else {
-        // No user found, set default username
-        cell.username.text = @"🤖";
-    }
-     */
+    postCell.usernamePost.text = author.username;
+    
+    
+    
     return postCell;
 
 }
