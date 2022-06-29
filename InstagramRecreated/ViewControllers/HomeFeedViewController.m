@@ -45,6 +45,8 @@
     [self.refreshControl addTarget:self action:@selector(refreshHomeFeed:) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     [self refreshHomeFeed:self.refreshControl];
+    
+    // TODO: Create a timer that checks if new posts were made and reloads automatically
 }
 
 - (void) refreshHomeFeed:(UIRefreshControl *)refreshControl {
