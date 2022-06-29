@@ -101,9 +101,10 @@
     postCell.captionPost.text = self.posts[indexPath.row][@"caption"];
     
     PFFileObject *imageData = self.posts[indexPath.row][@"image"];
-    postCell.imagePost.image = [UIImage imageWithData:[imageData getData]];  //self.posts[indexPath.row][@"image"];
+    postCell.imagePost.image = [UIImage imageWithData:[imageData getData]];
     
-  
+    PFUser *author = self.posts[indexPath.row][@"author"];
+    // postCell.usernamePost.text = author.username;
     /*
     PFUser *user = self.messages[indexPath.row][@"user"];
     if (user != nil) {
