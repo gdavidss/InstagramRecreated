@@ -22,6 +22,7 @@
 		6A34C8A9286918220047D286 /* InstagramRecreatedUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34C8A8286918220047D286 /* InstagramRecreatedUITestsLaunchTests.m */; };
 		6A5D1CA2286A475000B78922 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A5D1CA1286A475000B78922 /* Keys.plist */; };
 		6A945923286D425A001A5F0C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A945922286D425A001A5F0C /* ProfileViewController.m */; };
+		6A945926286D45B3001A5F0C /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A945925286D45B3001A5F0C /* ProfileEditViewController.m */; };
 		6ADD26F6286BC4B900E018BD /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADD26F5286BC4B900E018BD /* PostCell.m */; };
 		6ADD26F9286C0AC700E018BD /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADD26F8286C0AC700E018BD /* DetailViewController.m */; };
 		A70E0637828CFA5D7D19B81C /* Pods_InstagramRecreated_InstagramRecreatedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FE5233C005E8BF7D3F5F1E /* Pods_InstagramRecreated_InstagramRecreatedUITests.framework */; };
@@ -77,6 +78,8 @@
 		6A5D1CA1286A475000B78922 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		6A945921286D425A001A5F0C /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		6A945922286D425A001A5F0C /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		6A945924286D45B3001A5F0C /* ProfileEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileEditViewController.h; sourceTree = "<group>"; };
+		6A945925286D45B3001A5F0C /* ProfileEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileEditViewController.m; sourceTree = "<group>"; };
 		6ADD26F4286BC4B900E018BD /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
 		6ADD26F5286BC4B900E018BD /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		6ADD26F7286C0AC700E018BD /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 			children = (
 				6A945921286D425A001A5F0C /* ProfileViewController.h */,
 				6A945922286D425A001A5F0C /* ProfileViewController.m */,
+				6A945924286D45B3001A5F0C /* ProfileEditViewController.h */,
+				6A945925286D45B3001A5F0C /* ProfileEditViewController.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -523,6 +528,7 @@
 				6A215E4D286A51860016E315 /* HomeFeedViewController.m in Sources */,
 				6A34C882286918210047D286 /* AppDelegate.m in Sources */,
 				6ADD26F9286C0AC700E018BD /* DetailViewController.m in Sources */,
+				6A945926286D45B3001A5F0C /* ProfileEditViewController.m in Sources */,
 				6A34C893286918220047D286 /* main.m in Sources */,
 				6A945923286D425A001A5F0C /* ProfileViewController.m in Sources */,
 				6ADD26F6286BC4B900E018BD /* PostCell.m in Sources */,

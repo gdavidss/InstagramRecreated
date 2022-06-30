@@ -53,7 +53,7 @@
     // Get the image captured by the UIImagePickerController
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
-    // Do something with the images
+    // Do something with the image
     [self.composeImage setImage:editedImage];
     
     // Dismiss UIImagePickerController to go back to compose view controller

@@ -35,7 +35,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.NUM_POSTS_SHOWN = 20;
+    self.NUM_POSTS_SHOWN = 3;
     
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -55,7 +55,7 @@
     query.limit = self.NUM_POSTS_SHOWN;
     [query orderByDescending:@"createdAt"];
     [query includeKeys:@[@"author"]];
-    
+
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
@@ -94,18 +94,16 @@
 }
 
 // infinite scrolling
-/*
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.posts.count == indexPath.row + 1) {
-        NSLog(@"test1");
+        // NSLog(@"test1");
         if (self.posts.count == self.NUM_POSTS_SHOWN) {
-            NSLog(@"test2");
-            self.NUM_POSTS_SHOWN += 3;
+           // NSLog(@"test2");
+            self.NUM_POSTS_SHOWN++;
             [self refreshHomeFeed:self.refreshControl];
         }
     }
 }
- */
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -113,17 +111,6 @@
     PostCell *postCell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"forIndexPath:indexPath];
     postCell.post = self.posts[indexPath.row];
     return postCell;
-    /*
-    postCell.captionPost.text = self.posts[indexPath.row][@"caption"];
-    
-    PFFileObject *imageData = self.posts[indexPath.row][@"image"];
-    postCell.imagePost.image = [UIImage imageWithData:[imageData getData]];
-    
-    PFUser *author = self.posts[indexPath.row][@"author"];
-    postCell.usernamePost.text = author.username;
-    
-    return postCell;
-     */
 }
 
 
