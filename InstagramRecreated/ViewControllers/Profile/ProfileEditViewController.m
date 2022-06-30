@@ -22,31 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //PFFileObject imageFr
-    //[self.profileImage setImage:PFUser.currentUser[@"image"]];
-    
-    /*
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    //query.limit = self.NUM_POSTS;
-    [query includeKey:@"username"];
-    
-    // Selects only posts from the current user
-    [query whereKey:@"username" equalTo:PFUser.currentUser[@"username"]];
-
-    // fetch data asynchronously
-    [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
-        if (users != nil) {
-            NSLog(@"%@", users[0]);
-            NSLog(@"Posts succesfully loaded");
-        } else {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
-     */
 }
 
 - (IBAction)editProfileImage:(id)sender {
-    
+    // TODO: edit profile image
 }
 
 /*
