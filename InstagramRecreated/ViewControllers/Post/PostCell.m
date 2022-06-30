@@ -7,7 +7,7 @@
 
 #import "PostCell.h"
 #import "Post.h"
-#import "DateFormatter.h"
+#import "Util.h"
 
 @implementation PostCell
 
@@ -29,7 +29,7 @@
     self.likesPost.text = [NSString stringWithFormat:@"%@ likes", post.likeCount];
     
     NSString *stringDate = [NSString stringWithFormat:@"%@", post.createdAt];
-    self.datePost.text = [DateFormatter formatDateString:stringDate];
+    self.datePost.text = [Util formatDateString:stringDate];
 }
 
 

@@ -6,7 +6,7 @@
 //
 
 #import "DetailViewController.h"
-#import "DateFormatter.h"
+#import "Util.h"
 
 @interface DetailViewController ()
 
@@ -34,7 +34,7 @@
     self.likesPost.text = [NSString stringWithFormat:@"%@ likes", _post.likeCount];
     
     NSString *stringDate = [NSString stringWithFormat:@"%@", _post.createdAt];
-    self.datePost.text = [DateFormatter formatDateString:stringDate];
+    self.datePost.text = [Util formatDateString:stringDate];
 }
 
 @end

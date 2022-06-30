@@ -7,6 +7,9 @@
 
 #import "ProfileEditViewController.h"
 #import "Post.h"
+#import "Util.h"
+
+@import Parse;
 
 @interface ProfileEditViewController ()
 
@@ -19,6 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //PFFileObject imageFr
+    //[self.profileImage setImage:PFUser.currentUser[@"image"]];
+    
+    /*
     PFQuery *query = [PFQuery queryWithClassName:@"User"];
     //query.limit = self.NUM_POSTS;
     [query includeKey:@"username"];
@@ -35,6 +42,7 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+     */
 }
 
 - (IBAction)editProfileImage:(id)sender {
