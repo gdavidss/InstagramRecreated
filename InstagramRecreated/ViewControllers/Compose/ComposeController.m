@@ -60,9 +60,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
 - (IBAction)didTapCancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 - (IBAction)didTapShare:(id)sender {
     [Post postUserImage:self.composeImage.image withCaption:self.captionField.text

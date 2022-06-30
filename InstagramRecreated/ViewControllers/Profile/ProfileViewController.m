@@ -43,8 +43,8 @@
     [self.refreshControl addTarget:self action:@selector(refreshHomeFeed:) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     [self refreshHomeFeed:self.refreshControl];
-    
 }
+
 
 - (void) refreshHomeFeed:(UIRefreshControl *)refreshControl {
     [refreshControl beginRefreshing];
@@ -96,13 +96,13 @@
     return self.posts.count;
 }
 
-/*
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"detailSegue"]) {
+    if ([segue.identifier isEqualToString:@"detailProfileSegue"]) {
         DetailViewController *detailController = [segue destinationViewController];
         detailController.post = self.posts[[self.tableView indexPathForCell:sender].row];
     }
 }
-*/
+
 
 @end
