@@ -22,7 +22,7 @@
 @property (strong, nonatomic) NSArray *posts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (nonatomic) int NUM_POSTS_SHOWN;
+@property (nonatomic) int NUM_POSTS;
 
 @end
 
@@ -35,8 +35,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.NUM_POSTS_SHOWN = 3;
-    
+    self.NUM_POSTS = 3;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
@@ -48,11 +47,12 @@
     
 }
 
+
 - (void) refreshHomeFeed:(UIRefreshControl *)refreshControl {
     [refreshControl beginRefreshing];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    query.limit = self.NUM_POSTS_SHOWN;
+    query.limit = self.NUM_POSTS;
     [query orderByDescending:@"createdAt"];
     [query includeKeys:@[@"author"]];
 
@@ -70,7 +70,7 @@
 }
 
 
--(void)renderComposeButton {
+- (void)renderComposeButton {
     UIImage *image = [[UIImage imageNamed:@"insta_camera_btn"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
     [self.composeButton setImage:image forState:UIControlStateNormal];
@@ -93,17 +93,23 @@
     mySceneDelegate.window.rootViewController = loginViewController;
 }
 
+
 // infinite scrolling
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.posts.count == indexPath.row + 1) {
         // NSLog(@"test1");
-        if (self.posts.count == self.NUM_POSTS_SHOWN) {
+        if (self.posts.count == self.NUM_POSTS) {
            // NSLog(@"test2");
-            self.NUM_POSTS_SHOWN++;
+            self.NUM_POSTS++;
             [self refreshHomeFeed:self.refreshControl];
         }
     }
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {

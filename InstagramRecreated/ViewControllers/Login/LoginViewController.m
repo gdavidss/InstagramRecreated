@@ -19,13 +19,16 @@
     // Do any additional setup after loading the view.
 }
 
+
 - (IBAction)beginEditingUsername:(id)sender {
     self.usernameField.text = @"";
 }
 
+
 - (IBAction)beginEditingPassword:(id)sender {
     self.passwordField.text = @"";
 }
+
 
 - (IBAction)signUp:(id)sender {
     // initialize a user object
@@ -48,6 +51,7 @@
           }
       }];
 }
+
 
 - (IBAction)login:(id)sender {
     NSString *username = self.usernameField.text;

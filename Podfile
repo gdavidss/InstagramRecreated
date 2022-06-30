@@ -7,6 +7,7 @@ target 'InstagramRecreated' do
 
     # Pods for YOUR_APP
     pod 'Parse'
+    pod 'MBProgressHUD'
 
   target 'InstagramRecreatedTests' do
     inherit! :search_paths

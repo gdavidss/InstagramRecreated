@@ -7,6 +7,7 @@
 
 #import "ComposeController.h"
 #import "Post.h"
+#import "MBProgressHUD.h"
 
 @interface ComposeController ()
 
@@ -65,8 +66,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
 - (IBAction)didTapShare:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated: true];
     [Post postUserImage:self.composeImage.image withCaption:self.captionField.text
          withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (error != nil) {
@@ -74,9 +75,11 @@
         } else {
             NSLog(@"Post made successfully");
         }
+        [MBProgressHUD hideHUDForView:self.view animated:true];
     }];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 /*
 #pragma mark - Navigation
@@ -88,57 +91,4 @@
 }
 */
 
-/*
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    <#code#>
-}
-
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    <#code#>
-}
-
-- (void)encodeWithCoder:(nonnull NSCoder *)coder {
-    <#code#>
-}
-
-- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
-    <#code#>
-}
-
-- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-    <#code#>
-}
-
-- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
-    <#code#>
-}
-
-- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-    <#code#>
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-    <#code#>
-}
-
-- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-    <#code#>
-}
-
-- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
-    <#code#>
-}
-
-- (void)setNeedsFocusUpdate {
-    <#code#>
-}
-
-- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
-    <#code#>
-}
-
-- (void)updateFocusIfNeeded {
-    <#code#>
-}
-*/
 @end

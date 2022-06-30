@@ -94,8 +94,8 @@
             filePath = "InstagramRecreated/Models/Post.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "+postUserImage:withCaption:withCompletion:"
             landmarkType = "7">
          </BreakpointContent>
@@ -338,8 +338,8 @@
             filePath = "InstagramRecreated/ViewControllers/HomeFeed/HomeFeedViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -354,8 +354,8 @@
             filePath = "InstagramRecreated/ViewControllers/HomeFeed/HomeFeedViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>

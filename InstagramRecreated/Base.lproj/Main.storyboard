@@ -341,7 +341,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3171" y="-360"/>
+            <point key="canvasLocation" x="3135" y="-360"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="yeR-D6-EfG">
@@ -545,7 +545,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JpQ-3k-Dlg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2341" y="-360"/>
+            <point key="canvasLocation" x="2329" y="-360"/>
         </scene>
         <!--Profile feed-->
         <scene sceneID="adJ-Vm-mtB">
@@ -672,8 +672,8 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Profile feed" id="aUg-KB-zZc">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="M0m-7W-War">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="EBd-Lz-pNw">
-                                <rect key="frame" x="308" y="112" width="67" height="31"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="EBd-Lz-pNw">
+                                <rect key="frame" x="288" y="5" width="106" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Edit profile"/>

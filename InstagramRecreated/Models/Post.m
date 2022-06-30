@@ -6,6 +6,7 @@
 //
 
 #import "Post.h"
+#import "MBProgressHUD.h"
 
 @implementation Post
 
