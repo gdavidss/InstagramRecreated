@@ -306,8 +306,8 @@
             filePath = "InstagramRecreated/ViewControllers/Post/PostCell.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "-setPost:"
             landmarkType = "7">
          </BreakpointContent>
@@ -389,6 +389,22 @@
             startingLineNumber = "101"
             endingLineNumber = "101"
             landmarkName = "-prepareForSegue:sender:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "80FDD973-7B0B-4657-A120-C4C72C5D2E12"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstagramRecreated/ViewControllers/Post/PostCell.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-setPost:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

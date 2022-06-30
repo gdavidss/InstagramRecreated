@@ -66,15 +66,19 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
 - (IBAction)didTapShare:(id)sender {
+    // Progress HUD for when post is being made
     [MBProgressHUD showHUDAddedTo:self.view animated: true];
+    
     [Post postUserImage:self.composeImage.image withCaption:self.captionField.text
          withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (error != nil) {
-            NSLog(@"Error: %@", error.localizedDescription);
+    NSLog(@"Error: %@", error.localizedDescription);
         } else {
             NSLog(@"Post made successfully");
         }
+        // Hides progress HUD on completion
         [MBProgressHUD hideHUDForView:self.view animated:true];
     }];
     [self dismissViewControllerAnimated:YES completion:nil];
