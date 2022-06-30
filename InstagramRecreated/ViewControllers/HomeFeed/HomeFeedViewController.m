@@ -47,7 +47,6 @@
     
 }
 
-
 - (void) refreshHomeFeed:(UIRefreshControl *)refreshControl {
     [refreshControl beginRefreshing];
     

@@ -38,6 +38,13 @@
       newUser.username = self.usernameField.text;
       //newUser.email = self.emailField.text;
       newUser.password = self.passwordField.text;
+        
+      UIImage *image = [UIImage imageNamed:@"profile_tab.png"];
+      NSData *dataImage = UIImagePNGRepresentation(image);
+      PFFileObject *profileImg = [PFFileObject fileObjectWithName:@"profilepic.png" data:dataImage];
+    
+      [newUser setValue:profileImg forKey:@"image"];
+                                                                
       
       // call sign up function on the object
       [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
