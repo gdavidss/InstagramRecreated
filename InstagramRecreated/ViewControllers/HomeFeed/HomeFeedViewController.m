@@ -46,7 +46,6 @@
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     [self refreshHomeFeed:self.refreshControl];
     
-    // TODO: Create a timer that checks if new posts were made and reloads automatically
 }
 
 - (void) refreshHomeFeed:(UIRefreshControl *)refreshControl {
@@ -80,7 +79,7 @@
 }
 
 
-- (IBAction)logout:(id)sender {
+- (IBAction)didTapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
     }];
@@ -93,6 +92,20 @@
 
     mySceneDelegate.window.rootViewController = loginViewController;
 }
+
+// infinite scrolling
+/*
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.posts.count == indexPath.row + 1) {
+        NSLog(@"test1");
+        if (self.posts.count == self.NUM_POSTS_SHOWN) {
+            NSLog(@"test2");
+            self.NUM_POSTS_SHOWN += 3;
+            [self refreshHomeFeed:self.refreshControl];
+        }
+    }
+}
+ */
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {

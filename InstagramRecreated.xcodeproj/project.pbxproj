@@ -21,6 +21,7 @@
 		6A34C8A7286918220047D286 /* InstagramRecreatedUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34C8A6286918220047D286 /* InstagramRecreatedUITests.m */; };
 		6A34C8A9286918220047D286 /* InstagramRecreatedUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A34C8A8286918220047D286 /* InstagramRecreatedUITestsLaunchTests.m */; };
 		6A5D1CA2286A475000B78922 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A5D1CA1286A475000B78922 /* Keys.plist */; };
+		6A945923286D425A001A5F0C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A945922286D425A001A5F0C /* ProfileViewController.m */; };
 		6ADD26F6286BC4B900E018BD /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADD26F5286BC4B900E018BD /* PostCell.m */; };
 		6ADD26F9286C0AC700E018BD /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADD26F8286C0AC700E018BD /* DetailViewController.m */; };
 		A70E0637828CFA5D7D19B81C /* Pods_InstagramRecreated_InstagramRecreatedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FE5233C005E8BF7D3F5F1E /* Pods_InstagramRecreated_InstagramRecreatedUITests.framework */; };
@@ -54,8 +55,8 @@
 		6A215E49286A4D940016E315 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		6A215E4B286A51860016E315 /* HomeFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
 		6A215E4C286A51860016E315 /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
-		6A215E55286B642B0016E315 /* ComposeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ComposeController.h; path = InstagramRecreated/ComposeController.h; sourceTree = SOURCE_ROOT; };
-		6A215E56286B642B0016E315 /* ComposeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ComposeController.m; path = InstagramRecreated/ComposeController.m; sourceTree = SOURCE_ROOT; };
+		6A215E55286B642B0016E315 /* ComposeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ComposeController.h; path = InstagramRecreated/ViewControllers/Compose/ComposeController.h; sourceTree = SOURCE_ROOT; };
+		6A215E56286B642B0016E315 /* ComposeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ComposeController.m; path = InstagramRecreated/ViewControllers/Compose/ComposeController.m; sourceTree = SOURCE_ROOT; };
 		6A215E5A286BAC580016E315 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		6A215E5B286BAC580016E315 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		6A34C87D286918210047D286 /* InstagramRecreated.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramRecreated.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +75,8 @@
 		6A34C8A6286918220047D286 /* InstagramRecreatedUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramRecreatedUITests.m; sourceTree = "<group>"; };
 		6A34C8A8286918220047D286 /* InstagramRecreatedUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramRecreatedUITestsLaunchTests.m; sourceTree = "<group>"; };
 		6A5D1CA1286A475000B78922 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		6A945921286D425A001A5F0C /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		6A945922286D425A001A5F0C /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		6ADD26F4286BC4B900E018BD /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
 		6ADD26F5286BC4B900E018BD /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		6ADD26F7286C0AC700E018BD /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -139,16 +142,12 @@
 		6A215E51286A71B40016E315 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6A215E55286B642B0016E315 /* ComposeController.h */,
-				6ADD26F7286C0AC700E018BD /* DetailViewController.h */,
-				6ADD26F8286C0AC700E018BD /* DetailViewController.m */,
-				6A215E56286B642B0016E315 /* ComposeController.m */,
-				6A215E4B286A51860016E315 /* HomeFeedViewController.h */,
-				6A215E4C286A51860016E315 /* HomeFeedViewController.m */,
-				6ADD26F4286BC4B900E018BD /* PostCell.h */,
-				6ADD26F5286BC4B900E018BD /* PostCell.m */,
-				6A215E48286A4D940016E315 /* LoginViewController.h */,
-				6A215E49286A4D940016E315 /* LoginViewController.m */,
+				6A945920286D4232001A5F0C /* Profile */,
+				6A94591F286D4221001A5F0C /* Detail */,
+				6A94591E286D4210001A5F0C /* Post */,
+				6A94591D286D420C001A5F0C /* Login */,
+				6A94591C286D41F7001A5F0C /* HomeFeed */,
+				6A94591B286D41EB001A5F0C /* Compose */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -226,6 +225,60 @@
 				6A34C8A8286918220047D286 /* InstagramRecreatedUITestsLaunchTests.m */,
 			);
 			path = InstagramRecreatedUITests;
+			sourceTree = "<group>";
+		};
+		6A94591B286D41EB001A5F0C /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				6A215E55286B642B0016E315 /* ComposeController.h */,
+				6A215E56286B642B0016E315 /* ComposeController.m */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		6A94591C286D41F7001A5F0C /* HomeFeed */ = {
+			isa = PBXGroup;
+			children = (
+				6A215E4B286A51860016E315 /* HomeFeedViewController.h */,
+				6A215E4C286A51860016E315 /* HomeFeedViewController.m */,
+			);
+			path = HomeFeed;
+			sourceTree = "<group>";
+		};
+		6A94591D286D420C001A5F0C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6A215E48286A4D940016E315 /* LoginViewController.h */,
+				6A215E49286A4D940016E315 /* LoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6A94591E286D4210001A5F0C /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				6ADD26F4286BC4B900E018BD /* PostCell.h */,
+				6ADD26F5286BC4B900E018BD /* PostCell.m */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		6A94591F286D4221001A5F0C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				6ADD26F7286C0AC700E018BD /* DetailViewController.h */,
+				6ADD26F8286C0AC700E018BD /* DetailViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		6A945920286D4232001A5F0C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				6A945921286D425A001A5F0C /* ProfileViewController.h */,
+				6A945922286D425A001A5F0C /* ProfileViewController.m */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,6 +524,7 @@
 				6A34C882286918210047D286 /* AppDelegate.m in Sources */,
 				6ADD26F9286C0AC700E018BD /* DetailViewController.m in Sources */,
 				6A34C893286918220047D286 /* main.m in Sources */,
+				6A945923286D425A001A5F0C /* ProfileViewController.m in Sources */,
 				6ADD26F6286BC4B900E018BD /* PostCell.m in Sources */,
 				6A34C885286918210047D286 /* SceneDelegate.m in Sources */,
 				6A215E57286B642B0016E315 /* ComposeController.m in Sources */,
