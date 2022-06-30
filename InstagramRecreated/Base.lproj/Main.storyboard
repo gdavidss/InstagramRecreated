@@ -451,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSN-xP-4SK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="1452"/>
+            <point key="canvasLocation" x="1564" y="1455"/>
         </scene>
         <!--Home-->
         <scene sceneID="6H3-dm-VA4">
@@ -473,7 +473,7 @@
             </objects>
             <point key="canvasLocation" x="738" y="-5"/>
         </scene>
-        <!--Profile-->
+        <!--Profile Edit View Controller-->
         <scene sceneID="lnz-kT-ov3">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="TtZ-VE-P4x" customClass="ProfileEditViewController" sceneMemberID="viewController">
@@ -518,17 +518,16 @@
                             <constraint firstItem="5LE-cj-k56" firstAttribute="centerX" secondItem="Xdd-x2-FeV" secondAttribute="centerX" id="nLm-T3-39K"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="iZJ-qC-SsJ"/>
+                    <navigationItem key="navigationItem" id="wfN-k3-uwd"/>
                     <connections>
                         <outlet property="editButton" destination="J5J-sE-Diy" id="MZV-TT-U1C"/>
                         <outlet property="profileImage" destination="5LE-cj-k56" id="PHI-QV-oQs"/>
-                        <outlet property="profilePicture" destination="5LE-cj-k56" id="z82-WQ-ZlD"/>
                         <outlet property="usernameLabel" destination="dr9-Pz-Haa" id="hoO-UL-0nv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3W6-Ad-yyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1151" y="676"/>
+            <point key="canvasLocation" x="406" y="833"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CqR-Nt-AXT">
@@ -547,26 +546,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JpQ-3k-Dlg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2341" y="-360"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="pe9-8a-9HN">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YIu-k0-lhl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="QlG-Xv-Aln" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="profile_tab" id="wc4-F0-Deq"/>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="T26-As-I8T"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IEX-Ys-EST">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="TtZ-VE-P4x" kind="relationship" relationship="rootViewController" id="C5O-o7-5RH"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="436" y="676"/>
         </scene>
         <!--Profile feed-->
         <scene sceneID="adJ-Vm-mtB">
@@ -690,28 +669,28 @@
                             <constraint firstAttribute="bottom" secondItem="L7G-qp-MTW" secondAttribute="bottom" id="qEs-Jd-SD1"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Profile feed" id="aUg-KB-zZc">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="FaA-K5-eVi">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="5o0-Ns-M9C">
-                                <rect key="frame" x="288" y="5" width="106" height="34.5"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="M0m-7W-War">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="EBd-Lz-pNw">
+                                <rect key="frame" x="308" y="112" width="67" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Edit profile" titleAlignment="center"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Edit profile"/>
+                                <connections>
+                                    <segue destination="TtZ-VE-P4x" kind="show" id="W5b-I6-heB"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="QlG-Xv-Aln" kind="show" id="fC7-Gb-ffn"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="editProfile" destination="FaA-K5-eVi" id="1Vg-s8-gd6"/>
                         <outlet property="tableView" destination="L7G-qp-MTW" id="RRy-BO-FCH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="91h-zD-ru7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-330" y="1435"/>
+            <point key="canvasLocation" x="-329" y="1436"/>
         </scene>
         <!--Profile-->
         <scene sceneID="iBq-XK-jHL">
